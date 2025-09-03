@@ -110,7 +110,7 @@ gdown --fuzzy https://drive.google.com/file/d/1q2qhYVMZgj2A7s__HBaS-k5pl0URtk8K/
 # Mesh AE
 gdown --fuzzy https://drive.google.com/file/d/1RndgH9PSLUJbSDd1cfo4UDOYBdjj7lqV/view?usp=drive_link
 # ACMDM-S-PS28 Mesh
-gdown --fuzzy https://drive.google.com/file/d/1H72A5flgx0we5QcRoBf_YqIOfkZRngC5/view?usp=drive_link
+gdown --fuzzy https://drive.google.com/file/d/131uH2kbQxJnj9o4DcgI2drOvIFTHw3Ao/view?usp=sharing
 # Length Estimator
 gdown --fuzzy https://drive.google.com/file/d/1nWoEcN4rEFKi4Xyf_ObKinDmSQNPKXgU/view?usp=drive_link
 echo -e "Unzipping"
