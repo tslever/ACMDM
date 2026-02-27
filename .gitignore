@@ -119,3 +119,8 @@ dmypy.json
 
 #Pycharm IDE
 .idea
+
+body_model
+checkpoints
+datasets
+glove
