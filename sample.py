@@ -88,10 +88,20 @@ def main(args):
 
     os.makedirs(args.out_dir, exist_ok=True)
 
-    # --- Save .npy (same as before)
+    # --- Save .npy in MARDM format: (T, J, 3), float32
     out_npy_path = pjoin(args.out_dir, args.out_name)
-    np.save(out_npy_path, motion_xyz_b3tj[0])
-    print(f"Saved NPY: {out_npy_path}, shape={motion_xyz_b3tj[0].shape} (3,T,J)")
+
+    # motion_xyz_b3tj[0] is (3, T, J) -> (T, J, 3)
+    joint_tj3 = np.transpose(motion_xyz_b3tj[0], (1, 2, 0))
+
+    # Trim to requested length exactly (like MARDM does with joint_data[:ml])
+    joint_tj3 = joint_tj3[:motion_len]
+
+    # Match MARDM dtype
+    joint_tj3 = joint_tj3.astype(np.float32, copy=False)
+
+    np.save(out_npy_path, joint_tj3)
+    print(f"Saved NPY: {out_npy_path}, shape={joint_tj3.shape} (T,J,3)")
 
     # --- Plot MP4 like ../MARDM/sample.py
     if args.save_mp4:
